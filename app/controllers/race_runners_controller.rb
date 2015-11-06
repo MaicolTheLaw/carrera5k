@@ -1,0 +1,2 @@
+class RaceRunnersController < ApplicationController
+end
