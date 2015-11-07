@@ -1,0 +1,14 @@
+<%= form_for :runner, url:{:action => 'create'} do |r| %>
+	<% r.label :race_name %></br>
+	<% r.text_field :race_name %></br>
+	<% r.label :no_kilometers %></br>
+	<% r.text_field :no_kilometers %></br>
+	<% r.label :race_date %></br>
+	<% r.text_field :race_date %></br>
+	<% r.label :race_address %></br>
+	<% r.text_field :race_address %></br>
+	<% r.label :route_id %></br>
+	<% r.text_field :route_id %></br>
+	<% r.label :no_of_running_kits %></br>
+	<% r.text_field :no_of_running_kits %></br>
+<% end %>

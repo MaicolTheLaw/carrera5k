@@ -1,2 +1,5 @@
 class WaypointsController < ApplicationController
+
+
+
 end
