@@ -1,6 +1,6 @@
 class RaceEditionsController < ApplicationController
 	before_filter :authenticate_user!
-	before_filter :check_admin_user
+	before_filter :check_admin_user, except:[:index]
 
 	def index
 		@race_editions = RaceEdition.all
@@ -38,7 +38,7 @@ class RaceEditionsController < ApplicationController
   	end
 
   	def check_admin_user
-  		if current_user.type = "1"
+  		if current_user.user_type != "96"
   			redirect_to root_path
   		end	
   	end	

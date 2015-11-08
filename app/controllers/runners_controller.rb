@@ -1,15 +1,18 @@
 class RunnersController < ApplicationController
 	before_filter :authenticate_user!
-	before_filter :check_normal_user, except:[:index]
+	before_filter :check_normal_user, only:[:new, :create, :edit, :update]
 	
 	def index 
-		if current_user.type = "1"
+		if current_user.user_type != "96"
   			redirect_to root_path
   		end	
 		@runner = Runner.all
 	end	
 
 	def new
+		if Runner.where(user_id:  current_user.id).take
+			redirect_to edit_runner_path
+		end	
 		@runner = Runner.new
 	end	
 
@@ -36,7 +39,7 @@ class RunnersController < ApplicationController
   	end
 
   	def check_normal_user
-  		if current_user.type = '0'
+  		if current_user.user_type = "96"
   			redirect_to root_path
   		end	
   	end	

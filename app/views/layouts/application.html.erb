@@ -1,22 +1,84 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
   <title>Carrera5k</title>
+
+  <!-- CSS  -->
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="carousel/style.css" rel="stylesheet" type="text/css" />
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<nav role="navigation">
+    	<div class="nav-wrapper container">
+      		<a id="logo-container" href="#" class="brand-logo"><img src="/images/logoberrendos.jpg"  height ="64px" width ="64px" ></a>
+      	
+        <ul class="right hide-on-med-and-down">
+        	<li><a href="/">La Carrera</a></li>
+        	<li><a href="/runners/new">Registro</a></li>
+        	<li><a href="/race_editions">Historia</a></li>
+        	<li><a href="/mains/about">Acerca de..</a></li>
+      	</ul>
 
-<div class="treeview">
-      <li><a href="/"><span>La Carrera</span></a></li>
-      <li><a href="/runners/new" ><span>Registro</span></a></li>
-      <li><a href="/mains/historia"><span>Historia</span></a></li>
-      <li><a href="/mains/about"><span>Acerca de</span></a></li>
-</div>
+      	<ul id="nav-mobile" class="side-nav">
+        	<li><a href="/">La Carrera</a></li>
+        	<li><a href="registro.html">Registro</a></li>
+        	<li><a href="historia.html">Historia</a></li>
+        	<li><a href="acercade.html">Acerca de..</a></li>
 
-	<div class="container">
-		<%= yield %>
-	</div>
+      	</ul>
+      	<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    	</div>
+  	</nav>
+			<%= yield %>
+
+
+  <footer class="page-footer teal">
+    
+    <div class="container">
+      <div class="row">
+        
+        <div class="col l6 s12">
+       
+          <h5 class="white-text">Corredores Berrendos</h5>
+          <p class="grey-text text-lighten-4">Club de <strong>Corredores Berrendo</strong> es un grupo de corredores recreativos de diversos niveles originarios de Baja California México.</p>
+        </div>
+
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-copyright">
+      <div class="container">
+        Hecho por  Hard Designs</a>
+      </div>
+    </div>
+
+  </footer>
+
+
 </body>
 </html>
