@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => { registrations: 'registrations' }
 
   resources :runners
   post '/runners/:id', to: 'runners#update'
   resources :race_editions
   post '/race_editions/:id', to: 'race_editions#update'  
+  get '/mains/about', to: 'mains#about'  
+  get '/mains/historia', to: 'mains#historia'  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

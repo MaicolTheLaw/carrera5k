@@ -1,5 +1,6 @@
 class RaceEditionsController < ApplicationController
-	before_filter :authenticate_user!, :check_admin_user
+	before_filter :authenticate_user!
+	before_filter :check_admin_user
 
 	def index
 		@race_editions = RaceEdition.all
