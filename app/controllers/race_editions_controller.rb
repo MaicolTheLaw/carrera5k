@@ -1,4 +1,6 @@
 class RaceEditionsController < ApplicationController
+	before_filter :authenticate_user!, :check_admin_user
+
 	def index
 		@race_editions = RaceEdition.all
 	end	
@@ -33,4 +35,10 @@ class RaceEditionsController < ApplicationController
   	def race_editions_params
     	params.require(:race_editions).permit(:race_name, :no_kilometers, :race_date, :race_address, :route_id, :no_of_running_kits)
   	end
+
+  	def check_admin_user
+  		if current_user.type = "1"
+  			redirect_to root_path
+  		end	
+  	end	
 end

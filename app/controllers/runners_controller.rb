@@ -1,7 +1,12 @@
 class RunnersController < ApplicationController
 	before_filter :authenticate_user!
-
-	def show 
+	before_filter :check_normal_user, except:[:index]
+	
+	def index 
+		if current_user.type = "1"
+  			redirect_to root_path
+  		end	
+		@runner = Runner.all
 	end	
 
 	def new
@@ -29,4 +34,11 @@ class RunnersController < ApplicationController
   	def runner_params
     	params.require(:runner).permit(:full_name, :birthday, :gender, :address, :city_of_birth, :state, :runners_team, :home_number, :mobile_number, :illness_exists, :illness_description)
   	end
+
+  	def check_normal_user
+  		if current_user.type = '0'
+  			redirect_to root_path
+  		end	
+  	end	
+
 end
