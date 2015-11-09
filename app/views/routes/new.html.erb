@@ -11,44 +11,30 @@ html, body {
     margin: 0;
     padding: 0;
   }
-#floating-panel {
-position: absolute;
-top: 10px;
-left: 25%;
-z-index: 5;
-background-color: #fff;
-padding: 5px;
-border: 1px solid #999;
-text-align: center;
-font-family: 'Roboto','sans-serif';
-line-height: 30px;
-padding-left: 10px;
-}
+
 </style>
 </head>
 <body>
-<div id="floating-panel">
-<input onclick="clearMarkers();" type=button value="Hide Markers">
-<input onclick="showMarkers();" type=button value="Show All Markers">
-<input onclick="deleteMarkers();" type=button value="Delete Markers">
-</div>
+
 
   <div id="google_canvas" style="height:500px; max-width:800px"></div>
   <p>Haz click en el mapa para agregar un punto en tu ruta</p>
 
-    <form method="POST" name="form1">
-    <input type="button" name="crearruta" value="Crear Ruta" onclick="createRoute();">
+    
+  
+ 
+
+<input onclick="deleteMarkers();" type=button value="Reiniciar">
+
+<form method="POST" name="form1" action="create" class="form1">
+<input type="hidden" value="" id="inicioruta" name="inicioruta">
+<input type="hidden" value="" id="finalruta" name="finalruta">
+<button onclick="actualizar()">Crear Ruta</button>
 </form>
 
-<%= form_for :route, url:{:action => 'create'} do |r| %>
-	<%= r.label :name %></br>
-	<%= r.text_field :name%></br> 
-	<%= r.label :start_point %></br>
-	<%= r.text_field :start_point%></br>
-	<%= r.label :finish_point%></br>
-	<%= r.text_field :finish_point%></br> 
-	<%= r.submit "Guardar Ruta"%>      
-<% end %>
+
+
+
 
 </body>
 
@@ -139,5 +125,27 @@ directionsRenderer.setDirections(response);
 }
 });
 }
+
+  //esto va en el JS
+function actualizar()
+
+{
+
+inicioruta = markers[0].position;
+finalruta = markers[markers.length-1].position;
+document.getElementById('inicioruta').value = inicioruta;
+for (var i = 1; i < markers.length-1; i++) {
+
+$(".form1").append("<input type='hidden' value='' name='waypoint' id='waypoint'>" );
+document.getElementById('waypoint').value = markers[i].position;
+document.getElementById('waypoint').name = "waypoint"+i;
+document.getElementById('waypoint').id = "waypoint"+i;
+}
+
+document.getElementById('finalruta').value = finalruta;
+alert("asad");
+
+}
+
 
 </script>
