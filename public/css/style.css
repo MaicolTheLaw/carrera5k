@@ -26,6 +26,7 @@ p {
   height: auto;
   color: rgba(255,255,255,.9);
 }
+
   .parallax-container .section {
     width: 100%;
   }
@@ -171,4 +172,19 @@ video#bgvid {
     height: 100%;
     display: none;
     float: rigth;
+}
+
+.parallax img
+{ 
+   display: inherit
+}
+
+.page-footer teal
+{ 
+   margin-top:0px;
+}
+
+footer.page-footer
+{
+   margin-top:0px;
 }

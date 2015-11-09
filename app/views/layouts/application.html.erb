@@ -19,13 +19,18 @@
             <!--<img src="/images/logoberrendos.jpg"  height ="64px" width ="64px" >-->
           </a>
 
+        <ul id="dropdown1" class="dropdown-content">
+          <li><%= link_to 'Editar Usuario', edit_user_registration_path %></li>
+          <li class="divider"></li>
+          <li><%= link_to 'Cerrar sesion', destroy_user_session_path, :method => :delete %></li>
+        </ul>  
+
         <ul class="right hide-on-med-and-down">
           <li><a href="/runners/new">Registro</a></li>
           <li><a href="/race_editions">Historia</a></li>
           <li><a href="/mains/about">Acerca de..</a></li>
-        <% if user_signed_in? %>            
-          <li><%= link_to current_user.email, edit_user_registration_path %></li>
-          <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+        <% if user_signed_in? %>  
+          <li><a href="#!" class="dropdown-button" data-activates="dropdown1" ><%=current_user.email%></a></li>          
         <% else %>
           <li><%= link_to 'Iniciar sesion', new_user_session_path %></li>
           <li><%= link_to 'Registrarse', new_user_registration_path %></li>  
@@ -69,7 +74,7 @@
 			<%= yield %>
 
 
-  <footer class="page-footer teal">
+  <footer class="page-footer teal" margin-top="0px">
     
     <div class="container">
       <div class="row">
@@ -119,4 +124,9 @@ $(document).ready(function(){
         $("#vertical").fadeToggle();
       });
     });</script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#vertical").fadeToggle();
+});
+</script>    
 </html>

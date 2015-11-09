@@ -1,6 +1,19 @@
-<% @route.each do |x| %>
-	<%= x.name %><br>
-	<%= x.start_point %><br>
-	<%= x.finish_point %><br>
-	<%= link_to 'Eliminar',  { action: :destroy, id: x.id }, method: :delete, data: { confirm: "¿Estas seguro?\n Borraras la ruta permanentemente."} %>
-<% end %>
+<div class="container">
+<table class="highlight centered responsive-table">
+	<thead>
+		<th>Id</th>
+        <th>Nombre</th>
+        <th>Fecha</th>
+        <th>Sexo</th>
+    </thead>
+    <tbody>
+        <tr>
+			<% @route.each do |x| %>
+				<td><%= x.name %></td>
+				<td><%= x.start_point %></td>
+				<td><%= x.finish_point %></td>
+				<td><%= link_to 'Eliminar',  { action: :destroy, id: x.id }, method: :delete, data: { confirm: "¿Estas seguro?\n Borraras la ruta permanentemente."} %></td>
+			<% end %>
+	</tbody>
+</table>
+</div>

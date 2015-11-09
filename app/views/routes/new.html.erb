@@ -39,17 +39,17 @@ padding-left: 10px;
     <form method="POST" name="form1">
     <input type="button" name="crearruta" value="Crear Ruta" onclick="createRoute();">
 </form>
-
-<%= form_for :route, url:{:action => 'create'} do |r| %>
-	<%= r.label :name %></br>
-	<%= r.text_field :name%></br> 
-	<%= r.label :start_point %></br>
-	<%= r.text_field :start_point%></br>
-	<%= r.label :finish_point%></br>
-	<%= r.text_field :finish_point%></br> 
-	<%= r.submit "Guardar Ruta"%>      
-<% end %>
-
+<div class="container">
+  <%= form_for :route, url:{:action => 'create'} do |r| %>
+	 <%= r.label :name,"Nombre de la ruta" %></br>
+	 <%= r.text_field :name%></br> 
+	 <%= r.label :start_point, "Punto de Salida" %></br>
+	 <%= r.text_field :start_point%></br>
+	 <%= r.label :finish_point, "Punto de meta"%></br>
+	 <%= r.text_field :finish_point%></br> 
+	 <%= r.submit "Guardar Ruta", class:"btn"%>      
+  <% end %>
+</div>
 </body>
 
 <script type="text/javascript">
