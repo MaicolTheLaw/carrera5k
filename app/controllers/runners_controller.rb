@@ -3,7 +3,7 @@ class RunnersController < ApplicationController
 	before_filter :check_normal_user, only:[:new, :create, :edit, :update]
 	
 	def index 
-		if current_user.user_type != "96"
+		if current_user.user_type != 96
   		redirect_to root_path
   	end	
 		@runner = Runner.all
@@ -39,7 +39,7 @@ class RunnersController < ApplicationController
   	end
 
   	def check_normal_user
-  		if current_user.user_type = "96"
+  		if current_user.user_type = 96
   			redirect_to root_path
   		end	
   	end	

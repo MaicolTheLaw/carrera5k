@@ -15,9 +15,8 @@
 <body>
 	<nav class="indigo" role="navigation">
     	<div class="nav-wrapper container">
-      		<a id="logo-container" href="#" class="brand-logo">
+      		<a id="logo-container" href="" class="brand-logo"><%= link_to 'La Carrera', root_path %>
             <!--<img src="/images/logoberrendos.jpg"  height ="64px" width ="64px" >-->
-            La Carrera
           </a>
 
         <ul class="right hide-on-med-and-down">
@@ -30,13 +29,18 @@
         <% else %>
           <li><%= link_to 'Iniciar sesion', new_user_session_path %></li>
           <li><%= link_to 'Registrarse', new_user_registration_path %></li>  
+          <% end %>
+          <% if @admin = 96 %>
+          <li><button></button></li>
+          <% end %>
       	</ul>
-        <% end %>
+        
 
 
       	<ul id="nav-mobile" class="side-nav">
-        	<li><a href="historia.html">Historia</a></li>
-        	<li><a href="acercade.html">Acerca de..</a></li>
+        	<li><a href="/runners/new">Registro</a></li>
+          <li><a href="/race_editions">Historia</a></li>
+          <li><a href="/mains/about">Acerca de..</a></li>
         <% if user_signed_in? %>            
           <li><%= link_to current_user.email, edit_user_registration_path %></li>
           <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
@@ -47,7 +51,21 @@
       	</ul>
       	<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     	</div>
+
+      <% if @admin = 96 %>
+      <ul class="verticalnavbar" id="vertical">
+        <li><a href="/runners/">Mostrar usuarios</a></li></br>
+        <li><a href="/race_editions/new">Crear Carrera</a></li></br>
+        <li><a href="/race_editions/">Listar Carreras</a></li></br>
+        <li><a href="/routes/new">Crear Mapa</a></li></br>
+        <li><a href="/routes/">Listar Mapas</a></li></br>
+      </ul>
+      <% end %>
   	</nav>
+
+    
+       
+    
 			<%= yield %>
 
 
@@ -95,4 +113,10 @@
 
 
 </body>
+<script type="text/javascript">
+$(document).ready(function(){
+      $("button").click(function(){
+        $("#vertical").fadeToggle();
+      });
+    });</script>
 </html>

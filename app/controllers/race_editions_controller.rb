@@ -38,7 +38,7 @@ class RaceEditionsController < ApplicationController
   	end
 
   	def check_admin_user
-  		if current_user.user_type != "96"
+  		if current_user.user_type != 96
   			redirect_to root_path
   		end	
   	end	

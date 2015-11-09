@@ -165,3 +165,10 @@ video#bgvid {
 }
 
 
+.verticalnavbar {
+    background: #d3d3d3;
+    width: 30px;
+    height: 100%;
+    display: none;
+    float: rigth;
+}
