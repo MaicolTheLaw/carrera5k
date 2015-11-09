@@ -1,0 +1,6 @@
+<% @route.each do |x| %>
+	<%= x.name %><br>
+	<%= x.start_point %><br>
+	<%= x.finish_point %><br>
+	<%= link_to 'Eliminar',  { action: :destroy, id: x.id }, method: :delete, data: { confirm: "¿Estas seguro?\n Borraras la ruta permanentemente."} %>
+<% end %>

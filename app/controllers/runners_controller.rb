@@ -4,8 +4,8 @@ class RunnersController < ApplicationController
 	
 	def index 
 		if current_user.user_type != "96"
-  			redirect_to root_path
-  		end	
+  		redirect_to root_path
+  	end	
 		@runner = Runner.all
 	end	
 

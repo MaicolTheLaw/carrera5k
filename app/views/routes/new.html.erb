@@ -1,0 +1,9 @@
+<%= form_for :route, url:{:action => 'create'} do |r| %>
+	<%= r.label :name %></br>
+	<%= r.text_field :name%></br> 
+	<%= r.label :start_point %></br>
+	<%= r.text_field :start_point%></br>
+	<%= r.label :finish_point%></br>
+	<%= r.text_field :finish_point%></br> 
+	<%= r.submit "Guardar Ruta"%>      
+<% end %>
