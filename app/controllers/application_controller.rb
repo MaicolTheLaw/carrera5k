@@ -5,8 +5,7 @@ class ApplicationController < ActionController::Base
 
 
   def index
-  	
-  		@admin= current_user.user_type
-  			
+  		@admin= current_user.user_type 			
   end
+
 end

@@ -1,7 +1,7 @@
 <div class="container">
-<h2>Editar <%= resource_name.to_s.humanize %></h2>
+<h2>Editar usuario </h2>
   <div class="row">
-    <div class="col col s8 offset-s2">
+    <div class="col s8 offset-s2">
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <%= devise_error_messages! %>
 
@@ -13,33 +13,39 @@
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <div>Esperando confirmacion para el correo: <%= resource.unconfirmed_email %></div>
         <% end %>
-
+    </div>
+    <div class="col s4 offset-s2">    
         <div class="field">
-          <%= f.label :password, "Contraseña" %> <i>(Dejalo en blanco si no quieres cambiarla)</i><br />
-          <%= f.password_field :password, autocomplete: "off" %>
+          <%= f.label :password, "Contraseña" %>
+          <%= f.password_field :password, autocomplete: "off" %></br>
+           <i class="thin">(Dejala en blanco si no quieres cambiarla)</i></br>
         </div>
-
+    </div>
+    <div class="col s4 ">    
         <div class="field">
-          <%= f.label :password_confirmation, "Confirmar contraseña" %><br />
+          <%= f.label :password_confirmation, "Confirmar contraseña" %>
           <%= f.password_field :password_confirmation, autocomplete: "off" %>
         </div>
-
+    </div>   
+    </br>     
+    <div class="col s8 offset-s2">
         <div class="field">
-          <%= f.label :current_password,"Contraseña actual" %> <i>(Lo necesitamos para guardar tus cambios)</i><br />
-          <%= f.password_field :current_password, autocomplete: "off" %>
+          <%= f.label :current_password,"Contraseña actual" %> 
+          <%= f.password_field :current_password, autocomplete: "off" %></br>
+          <i class="thin">(La necesitamos para guardar tus cambios)</i></br>
         </div>
-
-        <div class="col s1 offset-s8">
+    </div>    
+        <div class="col s1 offset-s7">
           <div class="actions">
-            <%= f.submit "Guardar cambios" %>
+            <%= f.submit "Guardar cambios", class:"btn" %>
           </div>
         </div>  
       <% end %>
 
-    </div>
-    <h3>Cancelar mi cuenta</h3>
+  </div>
+  </br>
 
-    <p>Insatisfecho? <%= button_to "Cancelar mi cuenta", registration_path(resource_name), data: { confirm: "Estas seguro?" }, method: :delete %></p>
-  </div>  
-<%= link_to "Regresar", :back %>
-</div>
+    <p>Insatisfecho? <%= button_to "Cancelar cuenta", registration_path(resource_name), data: { confirm: "Estas seguro?" }, method: :delete , class:"btn red"%></p>
+</div>  
+
+

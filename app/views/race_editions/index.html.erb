@@ -7,11 +7,12 @@
         		<tr>
             		<th>Id</th>
             		<th>Nombre</th>
+            		<th>Km</th>
             		<th>Fecha</th>
-            		<th>Sexo</th>
-            		<th>Direccion</th>
-            		<th>Ciudad</th>
-            		<th>Estado</th>
+            		<th>Lugar</th>
+            		<th>Ruta</th>
+            		<th># Kits</th>
+                    <th>X</th>
         		</tr>
     		</thead>
     		<tbody>		
@@ -21,7 +22,7 @@
 						<td><%= r.no_kilometers %></td>
 						<td><%= r.race_date %></td>
 						<td><%= r.race_address %></td>
-						<td><%= r.route_id %></td>
+						<td><%= r.route.name %></td>
 						<td><%= r.no_of_running_kits %></td>
 						<td><%= link_to 'Eliminar',  { action: :destroy, id: r.id }, method: :delete, data: { confirm: '¿Estas seguro?\n Borraras la carrera permanentemente.' } %></td>
 					</tr>

@@ -1,25 +1,32 @@
-<%= form_for :runner, url:{:action => 'update'} do |r| %>
-	<%= r.label :full_name %></br>
-	<%= r.text_field :full_name %></br> 
-	<%= r.label :birthday %></br>
-	<%= r.text_field :birthday%></br>
-	<%= r.label :gender%></br>
-	<%= r.text_field :gender%></br> 
-	<%= r.label :address %></br> 
-	<%= r.text_field :address%></br> 
-	<%= r.label :city_of_birth %></br>
-	<%= r.text_field :city_of_birth%></br>
-	<%= r.label :state %></br>
-	<%= r.text_field :state%></br>
-	<%= r.label :runners_team %></br>
-	<%= r.text_field :runners_team%></br>
-	<%= r.label :home_number %></br>
-	<%= r.text_field :home_number%></br>
-	<%= r.label :mobile_number %></br>
-	<%= r.text_field :mobile_number%></br>
-	<%= r.label :illness_exists %></br>
-	<%= r.text_field :illness_exists%></br>
-	<%= r.label :illness_description %></br>
-	<%= r.text_field :illness_description%></br>
-	<%= r.submit "Update Info", class:"btn"%>      
-<% end %>
+<div class="container">
+<h2>Informacion de corredor</h2>
+  <div class="row">
+    <div class="col col s8 offset-s2">
+		<%= form_for :runner, url:{:action => 'update'} do |r| %>
+			<%= r.label :full_name %></br>
+			<%= r.text_field :full_name %></br> 
+			<%= r.label :birthday %></br>
+			<%= r.text_field :birthday%></br>
+			<%= r.label :gender%></br>
+			<%= r.text_field :gender%></br> 
+			<%= r.label :address %></br> 
+			<%= r.text_field :address%></br> 
+			<%= r.label :city_of_birth %></br>
+			<%= r.text_field :city_of_birth%></br>
+			<%= r.label :state %></br>
+			<%= r.text_field :state%></br>
+			<%= r.label :runners_team %></br>
+			<%= r.text_field :runners_team%></br>
+			<%= r.label :home_number %></br>
+			<%= r.text_field :home_number%></br>
+			<%= r.label :mobile_number %></br>
+			<%= r.text_field :mobile_number%></br>
+			<%= r.label :illness_exists %></br>
+			<%= r.text_field :illness_exists%></br>
+			<%= r.label :illness_description %></br>
+			<%= r.text_field :illness_description%></br>
+			<%= r.submit "Actualizar informacion", class:"btn"%>      
+		<% end %>
+	</div>	
+  </div>
+</div>  

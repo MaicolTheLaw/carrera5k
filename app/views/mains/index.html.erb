@@ -16,7 +16,7 @@
     
     <div class="parallax" >
       <div class="filter">
-        <video autoplay loop poster="polina.jpg" id="bgvid" controls muted>
+        <video autoplay loop="true" poster="polina.jpg" id="bgvid" controls muted>
           <source src="https://www.youtube.com/watch?v=7179HizbzO4" type="video/mp4">
         </video>
       </div>
@@ -126,6 +126,12 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
+<script type="text/javascript">
+  $('video'.'bgvid').on('ended', function () {
+  this.load();
+  this.play();
+});
+</script>
 
 <script>
 console.clear();
