@@ -1,6 +1,7 @@
 class RoutesController < ApplicationController
 	before_filter :authenticate_user!
 	before_filter :check_admin_user
+	skip_before_filter :verify_authenticity_token  
 	
 	def index
 		@route = Route.all
@@ -11,9 +12,28 @@ class RoutesController < ApplicationController
 	end
 
 	def create
-		@route = Route.new(route_params)
-		@route.save
+		route_params = params
+		name   = route_params.extract!(:name)
+		inicio = route_params.extract!(:inicioruta)
+		final  = route_params.extract!(:finalruta)
+		route_params.extract!(:action)
+		route_params.extract!(:controller)
+
+		Route.create(start_point: inicio, finish_point: final, name: name)
+		route_id = Route.last.id
+
+		route_params.each do |key, value|
+			location = value
+			puts "#{location.inspect} #{route_id.inspect}!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+			Waypoint.create(location: location, route_id: route_id)
+		end
+
 		redirect_to routes_path
+
+		puts "params: #{route_params} <<<<<<<<<<<<<<<<<<<<<<"
+		# @route = Route.new(route_params)
+		# @route.save
+		# 
 	end
 
 	def show
