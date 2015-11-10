@@ -1,15 +1,44 @@
-<% @runner.each do |r| %>
-	<%= r.id %></br>
-	<%= r.full_name %></br>
-	<%= r.birthday%></br>
-	<%= r.gender%></br>
-	<%= r.address%></br>
-	<%= r.city_of_birth%></br>
-	<%= r.state%></br>
-	<%= r.runners_team%></br>
-	<%= r.home_number%></br>
-	<%= r.mobile_number%></br>
-	<%= r.illness_exists%></br>
-	<%= r.illness_description%></br>
-	<%= r.user_id %></br></br>
-<% end %>
+<table class="highlight centered responsive-table">
+	<thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Fecha</th>
+            <th>Sexo</th>
+            <th>Direccion</th>
+            <th>Ciudad</th>
+            <th>Estado</th>
+            <th>Equipo</th>
+            <th>Telefono</th>
+            <th>Celular</th>
+            <th>Discapacidad</th>
+            <th>Descripcion</th>
+        </tr>
+    </thead>
+    <tbody>
+    	<% @runner.each do |r| %>
+    	<tr>
+    		<td><%= r.id %></td>
+			<td><%= r.full_name %></td>
+			<td><%= r.birthday%></td>
+			<td><%= r.gender%></td>
+			<td><%= r.address%></td>
+			<td><%= r.city_of_birth%></td>
+			<td><%= r.state%></td>
+			<td><%= r.runners_team%></td>
+			<td><%= r.home_number%></td>
+			<td><%= r.mobile_number%></td>
+			<td><%= r.illness_exists%></td>
+			<td><%= r.illness_description%></td>
+    	</tr>
+    	<% end %>
+    </tbody>
+</table>
+
+
+
+
+
+
+
+	

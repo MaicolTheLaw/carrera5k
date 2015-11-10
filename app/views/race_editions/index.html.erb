@@ -1,9 +1,33 @@
-<% @race_editions.each do |r| %>
-	<%= r.race_name %></br>
-	<%= r.no_kilometers %></br>
-	<%= r.race_date %></br>
-	<%= r.race_address %></br>
-	<%= r.route_id %></br>
-	<%= r.no_of_running_kits %></br>
-	<%= link_to 'Eliminar',  { action: :destroy, id: r.id }, method: :delete, data: { confirm: '¿Estas seguro?\n Borraras la carrera permanentemente.' } %>
-<% end %>
+<div class="container">
+  <h2>Ediciones de carreras guardadas</h2>
+  <div class="row">
+    <div class="col col s8 offset-s2">
+    	<table class="highlight centered responsive-table">
+			<thead>
+        		<tr>
+            		<th>Id</th>
+            		<th>Nombre</th>
+            		<th>Fecha</th>
+            		<th>Sexo</th>
+            		<th>Direccion</th>
+            		<th>Ciudad</th>
+            		<th>Estado</th>
+        		</tr>
+    		</thead>
+    		<tbody>		
+				<% @race_editions.each do |r| %>
+					<tr>
+						<td><%= r.race_name %></td>
+						<td><%= r.no_kilometers %></td>
+						<td><%= r.race_date %></td>
+						<td><%= r.race_address %></td>
+						<td><%= r.route_id %></td>
+						<td><%= r.no_of_running_kits %></td>
+						<td><%= link_to 'Eliminar',  { action: :destroy, id: r.id }, method: :delete, data: { confirm: '¿Estas seguro?\n Borraras la carrera permanentemente.' } %></td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>		
+    </div>
+  </div>
+</div>		

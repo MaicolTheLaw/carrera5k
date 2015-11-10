@@ -32,9 +32,17 @@ html, body {
 <button onclick="actualizar()">Crear Ruta</button>
 </form>
 
-
-
-
+<div class="container">
+  <%= form_for :route, url:{:action => 'create'} do |r| %>
+	 <%= r.label :name,"Nombre de la ruta" %></br>
+	 <%= r.text_field :name%></br> 
+	 <%= r.label :start_point, "Punto de Salida" %></br>
+	 <%= r.text_field :start_point%></br>
+	 <%= r.label :finish_point, "Punto de meta"%></br>
+	 <%= r.text_field :finish_point%></br> 
+	 <%= r.submit "Guardar Ruta", class:"btn"%>      
+  <% end %>
+</div>
 
 </body>
 

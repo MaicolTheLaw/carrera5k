@@ -6,7 +6,7 @@ class RunnersController < ApplicationController
 		if current_user.user_type != 96
   		redirect_to root_path
   	end	
-		@runner = Runner.all
+		@runner = Runner.joins('INNER JOIN users ON runners.user_id = users.id').all
 	end	
 
 	def new
@@ -17,6 +17,9 @@ class RunnersController < ApplicationController
 	end	
 
 	def create
+		if Runner.where(user_id:  current_user.id).take
+			redirect_to edit_runner_path
+		end	
 		@runner = Runner.new(runner_params)
 		@runner.user_id = current_user.id
 		@runner.save
