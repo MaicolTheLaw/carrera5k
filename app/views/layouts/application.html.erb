@@ -20,6 +20,19 @@
  
 </head>
 <body>
+
+<ul id="slide-out" class="side-nav">
+        <li>dfhsdhjd</li>
+        <li>fgdhjdhsdh
+          </li>  
+        <li>dfjsdgfjdfgj
+        </li>  
+        <li>sfjtgdgjdgtj</li>  
+  </ul>
+</ul>
+<li class="medium material-icons"><a href="#" data-activates="slide-out" class="button-collapse"><i class="small mdi-navigation-menu"></i></a></li>
+
+
 	<nav class="blue" role="navigation">
     	<div class="nav-wrapper container">
       		<a id="logo-container" href="" class="brand-logo"><%= link_to 'La Carrera', root_path %>
@@ -40,8 +53,6 @@
         <% else %>
           <li><%= link_to 'Registrarse', new_user_registration_path %></li>  
         <% end %>  
-          
-          <li class="medium material-icons"><button style="background-color:transparent; border-style:none; margin-top:15px;margin-bottom:15px;">settings</button></li>
           
       	</ul>
         
@@ -94,8 +105,6 @@
         <li class="opc"><a href="/routes/new">Crear Mapa</a> </li> </br>
         <li class="opc"><a href="/routes/">Listar Mapas</a> </li> </br>
       </ul>
-   
-    
        
     
 			<%= yield %>
@@ -157,4 +166,15 @@ $(document).ready(function(){
   $("#vertical").fadeToggle();
 });
 </script>    
+
+<script type="text/javascript">
+  $('.button-collapse').sideNav({
+      menuWidth: 200, // Default is 240
+      menuHeight: 100,
+      edge: 'left', // Choose the horizontal origin
+      closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+    }
+  );
+</script>
+
 </html>
