@@ -77,36 +77,9 @@
       
   	</nav>
     <li class="medium material-icons" style="position:absolute;right:10%; top:20px;"><a href="#" data-activates="slide-out" class="button-collapse"><i class="small mdi-navigation-menu"></i></a></li>
-<style> 
-#vertical
-{
-  float:right; display:none;margin-left:90%; position:absolute; padding:0.5%; top:50px; z-index:1111; background:#ecf0f1
-}
 
-.opc
-{  
-   width: 100%;
-   background-color: #ecf0f1;
-   margin-bottom: 10px;
-   padding: 5px;
-}
-.opc:hover
-{
-  background-color: #bdc3c7;
-
-}
-
-
-
-</style>
     
-      <ul id="vertical" class="settings">
-        <li class="opc"><a href="/runners/">Mostrar usuarios</a> </li></br>
-        <li class="opc"><a href="/race_editions/new">Crear Carrera</a> </li></br>
-        <li class="opc"><a href="/race_editions/">Listar Carreras</a> </li></br>
-        <li class="opc"><a href="/routes/new">Crear Mapa</a> </li> </br>
-        <li class="opc"><a href="/routes/">Listar Mapas</a> </li> </br>
-      </ul>
+    
        
     
 			<%= yield %>
@@ -157,17 +130,7 @@
 
 
 </body>
-<script type="text/javascript">
-$(document).ready(function(){
-      $("button").click(function(){
-        $("#vertical").fadeToggle();
-      });
-    });</script>
-<script type="text/javascript">
-$(document).ready(function(){
-  $("#vertical").fadeToggle();
-});
-</script>    
+  
 
 <script type="text/javascript">
   $('.button-collapse').sideNav({
