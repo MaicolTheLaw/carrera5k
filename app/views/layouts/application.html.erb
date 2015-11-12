@@ -33,7 +33,7 @@
         <li><%= link_to 'Listar Mapas', routes_path %></li>  
   </ul>
 </ul>
-
+<li class="medium material-icons" style="position:absolute;right:10%; top:20px;"><a href="#" data-activates="slide-out" class="button-collapse"><i class="small mdi-navigation-menu"></i></a></li>
 
 
 	<nav class="teal accent-4" role="navigation">
@@ -75,17 +75,10 @@
       	<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     	</div>
 
+  </nav>
       
-      
-      
-  	</nav>
-    <li class="medium material-icons" style="position:absolute;right:10%; top:20px;"><a href="#" data-activates="slide-out" class="button-collapse"><i class="small mdi-navigation-menu"></i></a></li>
-
     
-    
-       
-    
-			<%= yield %>
+<%= yield %>
 
       
 
@@ -139,7 +132,7 @@
   $('.button-collapse').sideNav({
       menuWidth: 200, // Default is 240
       menuHeight: 100,
-      edge: 'left', // Choose the horizontal origin
+      edge: 'Right', // Choose the horizontal origin
       closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
     }
   );

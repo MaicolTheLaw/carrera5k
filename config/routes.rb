@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   resources :race_editions
   post '/race_editions/:id', to: 'race_editions#update'  
   get '/mains/about', to: 'mains#about'  
-  get '/mains/historia', to: 'mains#historia'  
+  get '/mains/historia', to: 'mains#historia' 
+  get '/mains/payment', to: 'mains#payment' 
   resources :routes
   post '/routes/create', to: 'routes#create' 
 
