@@ -5,6 +5,7 @@ class RoutesController < ApplicationController
 	
 	def index
 		@route = Route.all
+		
 	end
 
 	def new
@@ -13,9 +14,12 @@ class RoutesController < ApplicationController
 
 	def create
 		route_params = params
-		name   = route_params.extract!(:name)
-		inicio = route_params.extract!(:inicioruta)
-		final  = route_params.extract!(:finalruta)
+		name1   = route_params.extract!(:name)
+		name  = name1[:name]
+		inicio1 = route_params.extract!(:inicioruta)
+		inicio  = inicio1[:inicioruta]
+		final1  = route_params.extract!(:finalruta)
+		final  = final1[:finalruta]
 		route_params.extract!(:action)
 		route_params.extract!(:controller)
 
@@ -38,10 +42,9 @@ class RoutesController < ApplicationController
 
 	def show
 		@route  = Route.find(params[:id])
-		@inicio = @route.start_point.last
-		@final  = @route.finish_point.last
+		@inicio = @route.start_point
+		@final  = @route.finish_point
 		@filas  = Waypoint.where(route_id: params[:id])
-		@filas.to_a
 	end
 
 	def destroy
