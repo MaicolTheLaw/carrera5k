@@ -37,7 +37,11 @@ class RoutesController < ApplicationController
 	end
 
 	def show
-		@route = Route.find(params[:id])
+		@route  = Route.find(params[:id])
+		@inicio = @route.start_point.last
+		@final  = @route.finish_point.last
+		@filas  = Waypoint.where(route_id: params[:id])
+		@filas.to_a
 	end
 
 	def destroy
