@@ -18,12 +18,7 @@
       </form>
 
 
-      <%= form_for :route, url:{:action => 'create'}, name:"form1", :class=>"form1" do |r| %>
-        <input type="text" name="name" id="name" placeholder="Escribe el nombre de la ruta">
-        <input type="hidden" value="" id="inicioruta" name="inicioruta">
-        <input type="hidden" value="" id="finalruta" name="finalruta">
-        <button onclick="actualizar()" class="btn">Crear Ruta</button>    
-      <% end %>
+     
 
 
   </div>
@@ -128,7 +123,7 @@ function actualizar()
   }
 
   document.getElementById('finalruta').value = finalruta;
-  alert("asad");
+  
 }
 
 
