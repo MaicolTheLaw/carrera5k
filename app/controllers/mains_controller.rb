@@ -16,4 +16,8 @@ class MainsController < ApplicationController
 		@race_editions = RaceEdition.all
 	end
 
+	def payment
+
+	end	
+
 end

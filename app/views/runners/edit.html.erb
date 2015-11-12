@@ -1,32 +1,95 @@
 <div class="container">
 <h2>Informacion de corredor</h2>
-  <div class="row">
-    <div class="col col s8 offset-s2">
-		<%= form_for :runner, url:{:action => 'update'} do |r| %>
-			<%= r.label :full_name %></br>
+  <%= form_for :runner, url:{:action => 'update'} do |r| %>
+  	<div class="row">
+  	
+    	<div class="col s5 offset-s1">
+		
+			<%= r.label :full_name, "Nombre completo" %></br>
 			<%= r.text_field :full_name %></br> 
-			<%= r.label :birthday %></br>
-			<%= r.text_field :birthday%></br>
-			<%= r.label :gender%></br>
-			<%= r.text_field :gender%></br> 
-			<%= r.label :address %></br> 
+		</div>
+
+		<div class="col s2">
+			<%= r.label :birthday, "Fecha de nacimiento" %></br>
+			<%= r.date_field :birthday, class:"datepicker"%></br>
+		</div>
+		
+		<div class="col s4">
+			<label>Sexo</label></br>
+			<input type="radio" id="runner_gender_Hombre" name="runner[gender]" value="Hombre"/>
+			<label for="runner_gender_Hombre">Hombre</label>
+			<input type="radio" id="runner_gender_Mujer" name="runner[gender]" value="Mujer"/>	
+			<label for="runner_gender_Mujer">Mujer</label>
+
+		</div>	
+  	</div>	
+	
+	<div class="row">
+
+		<div class="col s5 offset-s1">
+			<%= r.label :address, "Direccion" %></br> 
 			<%= r.text_field :address%></br> 
-			<%= r.label :city_of_birth %></br>
+		</div>	
+
+		<div class="col s2">
+			<%= r.label :city_of_birth, "Ciudad de origen" %></br>
 			<%= r.text_field :city_of_birth%></br>
-			<%= r.label :state %></br>
+		</div>
+		
+		<div class="col s3">	
+			<%= r.label :state, "Estado" %></br>
 			<%= r.text_field :state%></br>
-			<%= r.label :runners_team %></br>
+		</div>	
+	</div>
+	
+	<div class="row">
+
+		<div class="col s3 offset-s1">	
+			<%= r.label :runners_team, "Equipo", :placeholder => "Si pertenece a uno" %></br>
 			<%= r.text_field :runners_team%></br>
-			<%= r.label :home_number %></br>
-			<%= r.text_field :home_number%></br>
-			<%= r.label :mobile_number %></br>
-			<%= r.text_field :mobile_number%></br>
-			<%= r.label :illness_exists %></br>
-			<%= r.text_field :illness_exists%></br>
-			<%= r.label :illness_description %></br>
-			<%= r.text_field :illness_description%></br>
-			<%= r.submit "Actualizar informacion", class:"btn"%>      
-		<% end %>
+		</div>	
+
+		<div class="col s3">
+			<%= r.label :home_number, "Telefono de casa" %></br>
+			<%= r.telephone_field :home_number%></br>
+		</div>	
+
+		<div class="col s4">
+			<%= r.label :mobile_number, "Celular" %></br>
+			<%= r.telephone_field :mobile_number%></br>
+		</div>	
 	</div>	
-  </div>
+
+	<div class="row">
+
+		<div class="col s2 offset-s1">
+			<label>Discapacidad/Enfermedad</label></br>
+			<center>
+			<input type="checkbox" value="Si" name="runner[illness_exists]" id="runner_illness_exists">
+			<label for="runner_illness_exists">Si</label>
+		</center>
+		</div>	
+
+		<div class="col s8">
+			<%= r.label :illness_description, "Descripcion de discapacidad/enfermedad" %></br>
+			<%= r.text_field :illness_description%></br>
+		</div>
+		
+	</div>
+
+	<div class="row">
+
+		<div class="col s3 offset-7">	
+			<%= r.submit "Actualizar informacion", class:"btn"%>      
+		</div>
+	</div>
+	<% end %>		
+  
 </div>  
+
+<script type="text/javascript">
+  $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15 // Creates a dropdown of 15 years to control year
+  });
+</script>

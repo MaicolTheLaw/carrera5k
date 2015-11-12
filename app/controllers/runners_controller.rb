@@ -23,7 +23,7 @@ class RunnersController < ApplicationController
 		@runner = Runner.new(runner_params)
 		@runner.user_id = current_user.id
 		if @runner.save		
-			redirect_to :controller=>"mains", :action=> "index" 
+			redirect_to :controller=>"mains", :action=> "payment" 
 		else
 		 	redirect_to :controller=>"runners", :action=> "new" , :id => current_user.id
 		end 	
@@ -36,7 +36,7 @@ class RunnersController < ApplicationController
 	def update
 		@runner = Runner.where(user_id:  current_user.id).take
 		@runner.update_attributes(runner_params)	
-		redirect_to root_path
+		redirect_to edit_runner_path
 	end	
 
 	private
