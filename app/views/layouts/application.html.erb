@@ -6,7 +6,7 @@
   <title>Carrera5k</title>
 
   <!-- CSS  -->
-  <link href="http://yonkethecardepots.com/website/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="http://yonkethecardepot.com/website/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="carousel/style.css" rel="stylesheet" type="text/css" />
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -17,35 +17,30 @@
  <script type="text/javascript" src="http://www.yonkethecardepot.com/website/js/init.js"></script>
  <script type="text/javascript" src="http://www.yonkethecardepot.com/website/js/materialize.min.js"></script>
  <script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3&sensor=false&language=en"></script>
- <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-
  
 </head>
 <body>
 	<nav class="blue" role="navigation">
     	<div class="nav-wrapper container">
-    
-
       		<a id="logo-container" href="" class="brand-logo"><%= link_to 'La Carrera', root_path %>
             <!--<img src="/images/logoberrendos.jpg"  height ="64px" width ="64px" >-->
           </a>
 
-       
+        <ul id="dropdown1" class="dropdown-content">
+          <li><%= link_to 'Editar Usuario', edit_user_registration_path %></li>
+          <li class="divider"></li>
+          <li><%= link_to 'Cerrar sesion', destroy_user_session_path, :method => :delete %></li>
+        </ul>  
 
         <ul class="right hide-on-med-and-down">
           <li><a href="/race_editions">Historia</a></li>
           <li><a href="/mains/about">Acerca de..</a></li>
         <% if user_signed_in? %>  
-          <li><a href="#!" class="dropdown-button" data-activates="dropdown1" ><%=current_user.email%></a></li>
-           <li   class="medium material-icons" ><button  style="background-color:transparent; border-style:none; margin-top:15px;margin-bottom:15px;" onclick="cambia_propiedades();">perm_identity</button>
-          <!-- <li><%= link_to 'Editar Usuario', edit_user_registration_path %></li>
-          <li class="divider"></li>
-          <li><%= link_to   'Cerrar sesion', destroy_user_session_path, :method => :delete %></li> -->
-        </li>            
+          <li><a href="#!" class="dropdown-button" data-activates="dropdown1" ><%=current_user.email%></a></li>          
         <% else %>
           <li><%= link_to 'Registrarse', new_user_registration_path %></li>  
         <% end %>  
-        
+          
           <li class="medium material-icons"><button style="background-color:transparent; border-style:none; margin-top:15px;margin-bottom:15px;">settings</button></li>
           
       	</ul>
@@ -161,26 +156,5 @@ $(document).ready(function(){
 $(document).ready(function(){
   $("#vertical").fadeToggle();
 });
-
-
-  <script>
-        var x = 0;
-        
-function cambia_propiedades(){
-    
-    if (x == 0)
-    {
-    $('#contacto').fadeIn();
-        x=1;
-        alert(x);
-    }
-    else 
-    {   $('#contacto').fadeOut();
-        x=0;
-        alert(x);
-    }
-}
-</script>
-
 </script>    
 </html>
