@@ -8,13 +8,15 @@
         <th>x</th>
     </thead>
     <tbody>
-        <tr>
-			<% @route.each do |x| %>
+		<% @route.each do |x| %>
+			<tr>
 				<td><%= x.name %></td>
 				<td><%= x.start_point %></td>
 				<td><%= x.finish_point %></td>
+				<td><a href="/routes/<%= x.id%>">Ver</a></td>
 				<td><%= link_to 'Eliminar',  { action: :destroy, id: x.id }, method: :delete, data: { confirm: "¿Estas seguro?\n Borraras la ruta permanentemente."} %></td>
-			<% end %>
+			</tr>	
+		<% end %>	
 	</tbody>
 </table>
 </div>

@@ -1,34 +1,98 @@
 <div class="container">
-  <h2>Ediciones de carreras guardadas</h2>
+  <h1>Ediciones de carreras guardadas</h1>
   <div class="row">
     <div class="col col s8 offset-s2">
-    	<table class="highlight centered responsive-table">
-			<thead>
-        		<tr>
-            		<th>Id</th>
-            		<th>Nombre</th>
-            		<th>Km</th>
-            		<th>Fecha</th>
-            		<th>Lugar</th>
-            		<th>Ruta</th>
-            		<th># Kits</th>
-                    <th>X</th>
-        		</tr>
-    		</thead>
-    		<tbody>		
-				<% @race_editions.each do |r| %>
-					<tr>
-						<td><%= r.race_name %></td>
-						<td><%= r.no_kilometers %></td>
-						<td><%= r.race_date %></td>
-						<td><%= r.race_address %></td>
-						<td><%= r.route.name %></td>
-						<td><%= r.no_of_running_kits %></td>
-						<td><%= link_to 'Eliminar',  { action: :destroy, id: r.id }, method: :delete, data: { confirm: '¿Estas seguro?\n Borraras la carrera permanentemente.' } %></td>
-					</tr>
-				<% end %>
-			</tbody>
-		</table>		
+    	 
+            <h2>Corriendo 5k por la ciudad de los niños 2015</h2>
+
+
+
+
+
+
     </div>
+
+
   </div>
-</div>		
+
+  <div id="captioned-gallery">
+    <figure class="slider">
+        <figure>
+            <img src="http://www.yonkethecardepot.com/website/images/5.jpg" alt>
+            <figcaption>Corriendo para Ayudar</figcaption>
+        </figure>
+        <figure>
+            <img src="http://www.yonkethecardepot.com/website/images/7.jpg" alt>
+            <figcaption>Los niños también ayudan.</figcaption>
+        </figure>
+        <figure>
+            <img src="http://www.yonkethecardepot.com/website/images/8.jpg" alt>
+            <figcaption>Corredores Berrendos</figcaption>
+        </figure>
+        <figure>
+            <img src="http://www.yonkethecardepot.com/website/images/9.jpg" alt>
+            <figcaption>Bryce Canyon, Utah, United States</figcaption>
+        </figure>
+        <figure>
+            <img src="http://www.yonkethecardepot.com/website/images/grupotres.jpg" alt>
+            <figcaption>Grupo Tress</figcaption>
+        </figure>
+        <figure>
+            <img src="http://www.yonkethecardepot.com/website/images/cheque.jpg" alt>
+            <figcaption>Fondos Recaudados</figcaption>
+        </figure>
+    </figure>
+</div>
+
+<p style="font-size:30px;">Esta carrera es para recaudar fondos para <strong>“La Ciudad de los Niños”</strong> una institución privada, sin fines de lucro, que ayuda a los niños menos favorecidos de Tijuana a través de programas de educación, asistencia, protección, etc.  </br>
+<strong>Grupo Tress Internacional</strong> ha hecho parte de la familia a esta institución a través de diversas donaciones. Este año, con la ayuda del club de 
+Corredores Berrendo, el objetivo de la empresa es poder brindar apoyo a través de la recaudación de fondos (por medio de la carrera) a aquellas personas que más lo necesitan y así “vivir la alegría de mejorar vidas”. </p> 
+</div>	
+
+<div class="fb-comments" data-href="http://localhost:3000/race_editions" data-numposts="8" style="margin-left:30%;"></div>
+
+<style>
+@import url(http://fonts.googleapis.com/css?family=Istok+Web);
+@keyframes slidy {
+0% { left: 0%; }
+20% { left: 0%; }
+25% { left: -100%; }
+45% { left: -100%; }
+50% { left: -200%; }
+70% { left: -200%; }
+75% { left: -300%; }
+95% { left: -300%; }
+100% { left: -400%; }
+}
+
+div#captioned-gallery { 
+  width: 100%; overflow: hidden; 
+}
+figure.slider { 
+  position: relative; width: 500%;
+  font-size: 0; animation: 30s slidy infinite; 
+}
+figure.slider figure { 
+  width: 20%; height: auto;
+  display: inline-block;  position: inherit; 
+}
+figure.slider img { width: 100%; height: auto; }
+figure.slider figure figcaption { 
+  position: absolute; bottom: 0;
+  background: rgba(0,0,0,0.4);
+  color: #fff; width: 100%;
+  font-size: 2rem; padding: .6rem; 
+}
+
+
+</style>
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.5&appId=864324486997127";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
