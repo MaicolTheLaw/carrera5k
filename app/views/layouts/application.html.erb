@@ -3,6 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="description" content="Esta carrera es para recaudar fondos para “La Ciudad de los Niños” una institución privada, sin fines de lucro, que ayuda a los niños menos favorecidos de Tijuana a través de programas de educación, asistencia, protección, etc.  ">
   <title>Carrera5k</title>
 
   <!-- CSS  -->
@@ -94,7 +95,7 @@
         </div>
 
         <div class="col l6 s12">
-        <div id="google_canvas" data-stellar-ratio="2.08" style="height:300px;"></div>
+        <div id="google" data-stellar-ratio="2.08" style="height:300px;"></div>
 
         </div>
 
@@ -132,7 +133,7 @@ function Dibujarmapa(){
     zoom: 18,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   }
-  mapa = new google.maps.Map(document.getElementById('google_canvas'),opcionesMapa);
+  mapa = new google.maps.Map(document.getElementById('google'),opcionesMapa);
   
     var geolocalizacion = new google.maps.LatLng(32.5284412,-117.0119245);
     var marcador = new google.maps.Marker({
