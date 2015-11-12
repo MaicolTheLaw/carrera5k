@@ -48,7 +48,7 @@ p {
     radial-gradient(black 0%, transparent 16%) 8px 8px,
     radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
     radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
-    background-color:#2980b9;
+    background-color:#6C7A89;
     background-size:16px 16px;
     
     
@@ -123,7 +123,7 @@ video#bgvid {
     z-index: 2;
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
-    background: url(polina.jpg) no-repeat;
+    
     background-size: cover; 
 }
 
@@ -166,13 +166,7 @@ video#bgvid {
 }
 
 
-.verticalnavbar {
-    background: #d3d3d3;
-    width: 30px;
-    height: 100%;
-    display: none;
-    float: rigth;
-}
+
 
 .parallax img
 { 
