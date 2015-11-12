@@ -34,9 +34,9 @@
         <li><%= link_to 'Listar Mapas', routes_path %></li>  
   </ul>
 </ul>
-
+<% if user_signed_in && current_user.user_type == 96 %>
 <li class="medium material-icons" style="position:absolute;right:10%; top:20px;"><a href="#" data-activates="slide-out" class="button-collapse"><i class="small mdi-navigation-menu"></i></a></li>
-
+<% end if %>
 
 	<nav class="teal accent-4" role="navigation">
     	<div class="nav-wrapper container">
