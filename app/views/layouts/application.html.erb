@@ -21,22 +21,25 @@
 </head>
 <body>
 
-<ul id="slide-out" class="side-nav">
-        <li>dfhsdhjd</li>
-        <li>fgdhjdhsdh
-          </li>  
-        <li>dfjsdgfjdfgj
-        </li>  
-        <li>sfjtgdgjdgtj</li>  
+<ul id="slide-out" class="side-nav cyan accent-4">
+        <a href="/" class="brand-logo">Inicio</a>
+        <li class="divider"></li>
+        <li><%= link_to 'Administrar Usuarios', runners_path %></li>
+        <li class="divider"></li>
+        <li><%= link_to 'Crear Carrera', new_race_edition_path %></li>  
+        <li><%= link_to 'Listar Carrera', race_editions_path %></li>  
+        <li class="divider"></li>
+        <li><%= link_to 'Crear Mapas', new_route_path %></li>
+        <li><%= link_to 'Listar Mapas', routes_path %></li>  
   </ul>
 </ul>
 
 
 
-	<nav class="blue" role="navigation">
+	<nav class="teal accent-4" role="navigation">
     	<div class="nav-wrapper container">
       		<a id="logo-container" href="" class="brand-logo"><%= link_to 'La Carrera', root_path %>
-            <!--<img src="/images/logoberrendos.jpg"  height ="64px" width ="64px" >-->
+            <!---->
           </a>
 
         <ul id="dropdown1" class="dropdown-content">
@@ -86,7 +89,7 @@
 
       
 
-  <footer class="page-footer teal" margin-top="0px">
+  <footer class="page-footer  light-blue darken-4" margin-top="0px">
     
     <div class="container">
       <div class="row">
