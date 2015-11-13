@@ -57,7 +57,7 @@
         <% if user_signed_in? %>  
           <li><a href="#!" class="dropdown-button" data-activates="dropdown1" ><%=current_user.email%></a></li>          
         <% else %>
-          <li onclick="location.reload();"><%= link_to 'Registrarse', new_user_registration_path %></li>  
+          <li ><%= link_to 'Registrarse', new_user_registration_path %></li>  
         <% end %>  
           
         </ul>
