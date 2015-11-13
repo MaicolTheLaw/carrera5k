@@ -1,0 +1,19 @@
+<div class="contariner">
+ <h1>Continuar?</h1>
+
+
+<%= form_for :race_runner, url:{:action => 'create'} do |r| %>
+  			<div class="row">
+  	
+    			<div class="col s5 offset-s1">
+					<%= r.hidden_field :race_edition_id, value: @race_editions %></br>
+					<%= r.hidden_field :runner_id, value: @runner_id %>
+					<%= r.hidden_field :has_payment, value: @has_payment %>
+					<%= r.hidden_field :has_kit, value: @has_kit %>
+					<%= r.hidden_field :runner_number, value: @runner_number %> 
+				</div>
+
+				<%= r.submit 'Si', class:"btn" %>
+
+<% end %>				
+</div>

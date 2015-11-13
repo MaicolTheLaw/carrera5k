@@ -17,6 +17,20 @@ class MainsController < ApplicationController
 	end
 
 	def payment
+		@usuario = Hash.new
+		@usuario = Runner.where(user_id: current_user.id).last
+		@runner_number = RaceRunner.where(race_edition_id: RaceEdition.last.id).count + 1
+		rid = Runner.where(user_id: current_user.id).last
+		@runner_id = rid.id
+		race_e = RaceEdition.order(created_at: :desc).last
+		@race_edition_id = race_e.id
+		@has_payment = true
+		if RaceRunner.where(has_kit: true).count > 500
+		@has_kit = false
+		else
+		@has_kit = true
+		end	
+
 
 	end	
 

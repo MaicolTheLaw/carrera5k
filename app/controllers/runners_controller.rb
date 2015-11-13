@@ -17,16 +17,11 @@ class RunnersController < ApplicationController
 	end	
 
 	def create
-		if Runner.where(user_id:  current_user.id).take != nil
-			redirect_to :controller=>"runners", :action=> "edit" , :id => current_user.id
-		end	
 		@runner = Runner.new(runner_params)
 		@runner.user_id = current_user.id
-		if @runner.save		
+		@runner.save		
 			redirect_to :controller=>"mains", :action=> "payment" 
-		else
-		 	redirect_to :controller=>"runners", :action=> "new" , :id => current_user.id
-		end 	
+			
 	end	
 
 	def edit

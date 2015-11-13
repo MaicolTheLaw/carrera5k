@@ -7,9 +7,11 @@ Rails.application.routes.draw do
   post '/race_editions/:id', to: 'race_editions#update'  
   get '/mains/about', to: 'mains#about'  
   get '/mains/historia', to: 'mains#historia' 
+  post '/mains/payment', to: 'mains#payment'
   get '/mains/payment', to: 'mains#payment' 
   resources :routes
-  post '/routes/create', to: 'routes#create' 
+  post '/routes/create', to: 'routes#create'
+  resources :race_runners
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
